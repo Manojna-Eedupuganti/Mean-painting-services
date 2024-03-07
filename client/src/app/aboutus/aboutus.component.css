@@ -1,0 +1,13 @@
+#a{
+    background-image: url('https://img.freepik.com/free-photo/encaustic-paint-background_1409-4273.jpg?size=626&ext=jpg&ga=GA1.1.332056568.1705575238&semt=sph');
+    height: 190vh;
+    background-size: cover;
+}
+#q{
+    font-family: cursive;
+    color:indianred ;
+}
+#w{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: maroon;
+}

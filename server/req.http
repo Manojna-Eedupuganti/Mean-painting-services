@@ -1,0 +1,42 @@
+get http://localhost:4000/user-api/users
+
+###
+get http://localhost:4000/form-api/data/abcd
+
+###
+post http://localhost:4000/user-api/users
+Content-Type: application/json
+
+{
+    "username":"manojna",
+    "age":21,
+    "email":"manu@mail.com"
+}
+
+###
+put http://localhost:4000/user-api/users
+Content-Type: application/json
+
+{
+    "username":"manu",
+    "age":23,
+    "email":"venu@mail.com"
+}
+
+###
+delete http://localhost:4000/user-api/users/21
+
+###
+post http://localhost:4000/form-api/data
+Content-Type: application/json
+
+{
+"address":"soo",
+"area":"2900",
+"city":"Chennai",
+"email":"manu@mail.com",
+"name":"manojna",
+"paintingtype":"Fresh painting",
+"phonenumber":"71534734",
+"planning":"1-7"
+}

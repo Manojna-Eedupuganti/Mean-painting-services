@@ -1,0 +1,160 @@
+{
+  "users": [
+    {
+      "id": "96c3",
+      "username": "manojna",
+      "password": "12345",
+      "email": "manu@mail.com",
+      "dob": "2024-01-25"
+    },
+    {
+      "id": "8743",
+      "username": "siddu",
+      "password": "0987",
+      "email": "manu@mail.com",
+      "dob": "2024-01-25"
+    },
+    {
+      "id": "7b48",
+      "username": "JOEL",
+      "password": "1234",
+      "email": "joel@gmail.com",
+      "dob": "2024-01-18"
+    },
+    {
+      "id": "f3fb",
+      "username": "JOEL4",
+      "password": "1234",
+      "email": "joel@gmail.com",
+      "dob": "2024-01-18"
+    },
+    {
+      "id": "5771",
+      "username": "siddu",
+      "password": "12345",
+      "email": "joel@gmail.com",
+      "dob": "2024-01-27"
+    },
+    {
+      "id": "6366",
+      "username": "rohini",
+      "password": "123456",
+      "email": "joel@gmail.com",
+      "dob": "2024-02-17"
+    }
+  ],
+  "registration": [
+    {
+      "id": "b037",
+      "name": "manojna",
+      "phonenumber": "71534734",
+      "email": "manu@mail.com",
+      "planning": "1-7",
+      "city": "Chennai"
+    },
+    {
+      "id": "8ae0",
+      "name": "Siddu",
+      "phonenumber": "71534734",
+      "email": "manu@mail.com",
+      "planning": "1-7",
+      "city": "Chennai"
+    },
+    {
+      "id": "8ada",
+      "name": "",
+      "phonenumber": "",
+      "email": "",
+      "planning": "",
+      "city": ""
+    },
+    {
+      "id": "2a82",
+      "name": "",
+      "phonenumber": "",
+      "email": "",
+      "planning": "",
+      "city": ""
+    },
+    {
+      "id": "dc84",
+      "name": "",
+      "phonenumber": "",
+      "email": "",
+      "planning": "",
+      "city": ""
+    },
+    {
+      "id": "8209",
+      "name": "",
+      "phonenumber": "",
+      "email": "",
+      "planning": "",
+      "city": ""
+    },
+    {
+      "id": "473b",
+      "name": "",
+      "phonenumber": "",
+      "email": "",
+      "planning": "",
+      "city": ""
+    },
+    {
+      "id": "c08c",
+      "name": "manojna",
+      "phonenumber": "71534734",
+      "email": "manu@mail.com",
+      "planning": "1-7",
+      "city": "Chennai"
+    },
+    {
+      "id": "d406",
+      "name": "manojna",
+      "phonenumber": "71534734",
+      "email": "manu@mail.com",
+      "planning": "8-14",
+      "city": "Chennai"
+    },
+    {
+      "id": "aec8",
+      "name": "manojna",
+      "phonenumber": "71534734",
+      "email": "asd@",
+      "planning": "1-7",
+      "city": "Chennai"
+    },
+    {
+      "id": "4ba6",
+      "name": "manojna",
+      "phonenumber": "71534734",
+      "email": "manu@mail.com",
+      "planning": "8-14",
+      "city": "NewDelhi"
+    },
+    {
+      "id": "7e81",
+      "name": "manojna",
+      "phonenumber": "71534734",
+      "email": "siddu@mail",
+      "planning": "1-7",
+      "city": "Chennai"
+    },
+    {
+      "id": "d74a",
+      "name": "manojna",
+      "phonenumber": "71534734",
+      "email": "manu@mail.com",
+      "planning": "1-7",
+      "city": "Mumbai"
+    },
+    {
+      "id": "f22e",
+      "name": "manojna",
+      "phonenumber": "71534734",
+      "email": "siddu@mail",
+      "planning": "1-7",
+      "city": "Mumbai"
+    }
+  ]
+}

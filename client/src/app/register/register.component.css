@@ -1,0 +1,14 @@
+#p1{
+    font-family:'cursive';
+    color:rgb(117, 168, 168);
+}
+.card{
+    background-color:rgb(245, 223, 144);
+}
+#ma{
+    background-image: url('/assets/register.jpg');
+   
+    background-size: cover;
+    padding-top: 30px;
+    height: 120vh;
+}

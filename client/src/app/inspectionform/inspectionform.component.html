@@ -1,0 +1,101 @@
+<div id="man">
+    <div class="card mx-auto mt-5 mb-5 w-10 o" style="width: 40rem;  ">
+        <p class="display-1 text-center" id="p1">Quotation</p>
+     
+            <!-- <div class="card-body"> -->
+     
+     
+    <form class="w-50 mx-auto mt-3 justify-content-center" [formGroup]="siteForm" #ref="ngForm" (ngSubmit)="onSubmit()">
+     
+        <div class="mb-3">
+            <label for="name" class="form-label">Name:</label>
+            <input type="text" id="name" formControlName="name" class="form-control">
+            <div *ngIf="name.invalid && (name.dirty || name.touched || ref.submitted)" class="text-danger">
+                <p *ngIf="name?.errors?.['required']">Username is required</p>
+            </div>
+        </div>
+     
+        <div  class="mb-3">
+            <label for="phonenumber" class="form-label">Phone Number:</label><br>
+            <input type="tel" id="phonenumber" formControlName="phonenumber" class="form-control">
+            <div *ngIf="phonenumber.invalid && (phonenumber.touched || phonenumber.dirty || ref.submitted)" class="text-danger">
+                <p *ngIf="phonenumber?.errors?.['required']">Phonenumber is required</p>
+                <p *ngIf="phonenumber?.errors?.['pattern']">Enter valid number</p>
+            </div>
+        </div>
+     
+        <div class="mb-3">
+            <label for="email" class="form-label">Email:</label><br>
+            <input type="email" id="email" formControlName="email" class="form-control">
+            <div *ngIf="email.invalid && (email.touched || email.dirty || ref.submitted)" class="text-danger"> 
+                <p *ngIf="email?.errors?.['required']">Email ID is required</p>
+                <p *ngIf="email?.errors?.['email']">Enter valid Email</p>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="city" class="form-label">City:</label>
+            <select id="city" formControlName="city" class="form-control">
+                <option value="" disable>Select City</option>
+                <option value="Chennai">Chennai</option>
+                <option value="Mumbai">Mumbai</option>
+                <option value="NewDelhi">New Delhi</option>
+                <option value="Hyderabad">Hyderabad</option>
+                <option value="Banglore">Banglore</option>
+            </select>
+            <div *ngIf="city.invalid && (city.touched || city.dirty || ref.submitted)" class="text-danger">
+                    <p *ngIf="city?.errors?.['required']">City is required</p>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="address" class="form-label">Address:</label><br>
+            <textarea type="text" id="address" formControlName="address" class="form-control row-3 col-5"></textarea>
+            <div *ngIf="address.invalid && (address.touched || address.dirty || ref.submitted)" class="text-danger"> 
+                    <p *ngIf="address?.errors?.['required']">Email ID is required</p>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="paintingtype" class="form-label">Select painting type:</label>
+            <div class="form-check mb-2">
+                <input type="radio" id="paintingtype" formControlName="paintingtype" class="form-check-input" value="Fresh painting">
+                <label class="form-check-label">Fresh painting</label>
+            </div>
+            <div class="form-check mb-2">
+                <input type="radio" id="paintingtype" formControlName="paintingtype" class="form-check-input" value="Re-painting">
+                <label class="form-check-label">Re-painting</label>
+            </div>
+            <div *ngIf="paintingtype.invalid && (paintingtype.touched || paintingtype.dirty || ref.submitted)" class="text-danger"> 
+                <p *ngIf="paintingtype?.errors?.['required']">Painting type is required</p>
+            </div>
+        </div> 
+
+        <div  class="mb-3">
+            <label for="area" class="form-label">Area in sq.ft:</label><br>
+            <input type="text" id="area" formControlName="area" class="form-control">
+            <div *ngIf="area.invalid && (area.touched || area.dirty || ref.submitted)" class="text-danger"> 
+                <p *ngIf="area?.errors?.['required']">Area is required</p>
+            </div>
+        </div>
+
+        <div  class="mb-3">
+            <label for="planning" class="form-label">I am Planning to paint my home:</label>
+            <select id="planning" formControlName="planning" class="form-control">
+                <option value="" disable>Select Days</option>
+                <option value="1-7">Next 1 to 7 days</option>
+                <option value="8-14">Next 8 to 14 days</option>
+                <option value="15-30">Next 15 to 30 days</option>
+            </select>
+     
+            <div *ngIf="planning.invalid && (planning.touched || planning.dirty || ref.submitted)" class="text-danger"> 
+                <p *ngIf="planning?.errors?.['required']">Planning is required</p>
+            </div>
+        </div>
+    
+        <button type="submit" class="text-center bg-secondary">Submit</button>
+     
+     
+    </form><br>
+    
+    </div>
+    </div>
+    

@@ -1,0 +1,16 @@
+.img{
+    height: 550px;
+}
+#a{
+height: 100px; 
+  text-align: center;
+  padding: 25px 25px 25px 25px;
+  background-color:burlywood;
+  color:brown;
+  font-style: italic;
+  font-family:calc();
+}
+.man{
+  width : 30cm;
+  height : 17cm
+}

@@ -1,0 +1,14 @@
+#p1{
+    font-family:'cursive';
+    color:rgb(101, 155, 155);
+}
+.card{
+    background-color:rgb(198, 240, 244);
+}
+#m{
+    background-image: url("/assets/login.jpg");
+   
+    background-size: cover;
+    padding-top: 20px;
+    height: 120vh;
+}

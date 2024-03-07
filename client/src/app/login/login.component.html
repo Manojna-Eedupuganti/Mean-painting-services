@@ -1,0 +1,38 @@
+<div id="m"><div class="card mx-auto mt-5 mb-5 w-50" style="width: 30rem;  ">
+    <p class="display-1 text-center" id="p1">LOGIN</p>
+    <!-- username and password (apply validations) -->
+     @if(userCredentialsError.userCredErrStatus){
+        <p class="text-danger text-center fs-3">{{userCredentialsError.userCredErrMsg}}</p>
+     }@else{
+        
+     }
+    <form class="w-50 mx-auto mt-3 text-center" [formGroup]="loginForm" #ref="ngForm" (ngSubmit)="onSubmitUser()">
+        <!-- username -->
+        <div class="mb-3">
+            <label for="username" class="form-label text-dark">Username</label>
+            <input type="text" formControlName="username" id="username" class="form-control">
+            <!-- validation error message for username -->
+            <div *ngIf="username?.invalid && (username?.dirty || username?.touched || ref.submitted)" class="text-danger">
+                <p *ngIf="username?.errors?.['required']">Username is required</p>
+            </div>
+        </div>
+     
+     
+        <!-- password -->
+        <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" formControlName="password" id="password" class="form-control">
+     
+            <!-- validation msg for password -->
+            <div *ngIf="password?.invalid && (password?.dirty || password?.touched || ref.submitted)" class="text-danger">
+                <p *ngIf="password?.errors?.['required']">Password is required</p>
+            </div>
+     
+     
+        </div>
+        <p>New User? <a routerLink="/register">REGISTER</a></p>
+        <button class="btn btn-success d-block mx-auto">LOGIN</button>
+    </form>
+    <br>
+    </div>
+    </div>

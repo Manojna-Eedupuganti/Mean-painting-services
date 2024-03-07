@@ -1,0 +1,28 @@
+.a:hover{
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10rem;
+}
+.b:hover{
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10rem;
+}
+.c:hover{
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10rem;
+}
+
+.d:hover{
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10rem;
+}
+.e:hover{
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10rem;
+}
+.f:hover{
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10rem;
+}
+.bg{
+    background-color:bisque;
+}
