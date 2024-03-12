@@ -3,8 +3,6 @@
     <!-- username and password (apply validations) -->
      @if(userCredentialsError.userCredErrStatus){
         <p class="text-danger text-center fs-3">{{userCredentialsError.userCredErrMsg}}</p>
-     }@else{
-        
      }
     <form class="w-50 mx-auto mt-3 text-center" [formGroup]="loginForm" #ref="ngForm" (ngSubmit)="onSubmitUser()">
         <!-- username -->

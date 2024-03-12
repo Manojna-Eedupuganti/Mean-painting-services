@@ -70,5 +70,15 @@ export class UserService {
    getUpdatedFormData(form):Observable<any>{
     return this.httpClient.put('http://localhost:4000/form-api/data',form)
    }
+
+   totalCost = new BehaviorSubject<number>(0);
+
+   getTotalCost(){
+    return this.totalCost.asObservable();
+   }
+
+   setTotalCost(value:number){
+    this.totalCost.next(value);
+   }
 }
 

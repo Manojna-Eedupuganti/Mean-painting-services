@@ -8,5 +8,6 @@ export class Data{
         public paintingtype?:string,
         public area?:string,
         public date?:string,
+        public cost?:number
         ){}
 }

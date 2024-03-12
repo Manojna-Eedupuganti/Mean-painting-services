@@ -4,14 +4,6 @@ const bcryptjs=require('bcryptjs');
 const jwt=require('jsonwebtoken');
 require('dotenv').config()
 
-const getUsers= async(req,res)=>{
-   const usersList= await UserData.find()
-    res.status(200).send({message:'users created',payload:usersList})
-}
-
-const getUserById= async(req,res)=>{
-    res.send({message:'user found'})
-}
 
 //registration
 const createUser= async(req,res)=>{
@@ -57,16 +49,7 @@ const loginUser = async (req, res) => {
 };
 
 
-const modifyUser= async(req,res)=>{
-   let result= await UserData.findOneAndUpdate({username:req.body.username},{...req.body})
-    res.status(200).send({message:'user modified',payload:result})
-}
-
-const deleteUser= async(req,res)=>{
-    let result= await UserData.deleteOne({age:req.params.age})
-    res.send({message:'user deleted',payload:result})
-};
 
 
 //export
-module.exports={getUsers,getUserById,createUser,loginUser,modifyUser,deleteUser}
+module.exports={createUser,loginUser}

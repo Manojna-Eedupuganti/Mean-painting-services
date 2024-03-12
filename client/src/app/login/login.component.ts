@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { FormGroup, FormControl, Validators,} from '@angular/forms'
 import { UserService } from '../services/user.service';
 import { Router } from '@angular/router';
- 
+import {NgToastService} from'ng-angular-popup'; 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -14,6 +14,7 @@ export class LoginComponent {
     password: new FormControl('', [Validators.required])
   });
    router=inject(Router)
+   toast=inject(NgToastService)
   userCredentialsError= { userCredErrStatus:false, userCredErrMsg: "" };
   // getters and setters
   get username() {
@@ -39,6 +40,13 @@ export class LoginComponent {
       //sessionStorage.setItem('token',res.token)
       //navigate to aboutus
       this.router.navigate(['/aboutus']);
+      this.toast.success({
+        detail:'Login done',
+        summary:'Login Successfull.',
+        position:'topCenter',
+        duration:3000
+        })
+      
     } else {
       this.userCredentialsError = {
         userCredErrStatus: true,

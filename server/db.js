@@ -66,6 +66,9 @@ const formSchema=new mongoose.Schema({
     },
     date:{
         type:Date
+    },
+    cost:{
+        type:Number
     }
 })
 

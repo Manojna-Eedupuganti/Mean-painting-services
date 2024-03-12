@@ -3,7 +3,7 @@ import {FormGroup, Validators ,FormControl} from '@angular/forms';
 import{ Router} from '@angular/router';
 import { UserService } from '../services/user.service';
 import { Data } from '../model/formdata';
-
+import {NgToastService} from'ng-angular-popup';
 @Component({
     selector: 'app-inspectionform',
     templateUrl: './inspectionform.component.html',
@@ -12,6 +12,7 @@ import { Data } from '../model/formdata';
  
   export class inspectionformComponent {
   date:any;
+  totalCost:any;
    siteForm= new FormGroup({
     name:new FormControl('',[Validators.required]),
     phonenumber:new FormControl('',[Validators.required,Validators.pattern(/^[7-9]{1}[0-9]{9}$/)]),
@@ -24,6 +25,7 @@ import { Data } from '../model/formdata';
    });
 
    router=inject(Router)
+   toast=inject(NgToastService)
 
    get name(){
     return this.siteForm.get('name')
@@ -33,37 +35,29 @@ import { Data } from '../model/formdata';
    }
    get email(){
     return this.siteForm.get('email')
-   }
+  }
+  get address(){
+   return this.siteForm.get('address')
+  }
    get planning(){
     return this.siteForm.get('planning')
    }
    get city(){
     return this.siteForm.get('city')
-   }
-   get address(){
-    return this.siteForm.get('address')
-   }
+  }
+  get paintingtype(){
+   return this.siteForm.get('paintingtype')
+  }
    get area(){
     return this.siteForm.get('area')
    }
-   get paintingtype(){
-    return this.siteForm.get('paintingtype')
-   }
-
-
-  //  onFormSubmit(){
-  //   console.log(this.siteForm.value)
-  //  }
 
    userservice=inject(UserService);
-
-
-
    
     onSubmit(): void {
 
-      let{name,phonenumber,email,planning,city,address,paintingtype,area}=this.siteForm.value;
-      let  newData=new Data(name,phonenumber,email,planning,city,address,paintingtype,area);
+      let{name,phonenumber,email,address,planning,city,paintingtype,area}=this.siteForm.value;
+      let  newData=new Data(name,phonenumber,email,address,planning,city,paintingtype,area);
       this.userservice.registrationData(newData).subscribe({
         next:(res)=>{
           console.log(res)
@@ -74,30 +68,28 @@ import { Data } from '../model/formdata';
             const inspectionDate = new Date(expectedDate.setDate(expectedDate.getDate() + daysToAdd));
             this.date = inspectionDate.toISOString().split('T')[0];
             
-            // let basic:number=20;
-            // let cost:string=formData.area;
-            // let totalCost:any=Number(cost)*basic;
+            let basic:number=20;
+            let cost:string=formData.area;
+            this.totalCost=Number(cost)*basic;
+            this.userservice.setTotalCost(this.totalCost);
 
-            let data = {name:formData.name,date:this.date}
+            let data = {name:formData.name,date:this.date,cost:this.totalCost}
             this.userservice.getUpdatedFormData(data).subscribe({
               next:res=>{
                 console.log("res after date update ",res)
                 this.router.navigate([`qoute/${formData.name}`])
+                this.toast.success({
+                  detail:'Form Submitted',
+                  summary:'Redirecting to quotation details',
+                  position:'topCenter',
+                  duration:3000
+                  })
+                
               },
               error:err=>{
                 console.log("error updating date ",err)
               }
-            }) 
-            // let info= {name:formData.name,totalCost:totalCost}
-            // this.userservice.getUpdatedFormData(data).subscribe({
-            //   next:res=>{
-            //     console.log("res after date update ",res)
-            //     this.router.navigate([`qoute/${formData.name}`])
-            //   },
-            //   error:err=>{
-            //     console.log("error updating date ",err)
-            //   }
-            // })        
+            })     
           }
         },
         error:err=>{

@@ -1,14 +1,47 @@
-<div>
-    <table>
-        <tr>
-            <td>name:</td><td>{{formData.name}}</td></tr>
-           <tr> <td>phonenumber:</td><td>{{formData.phonenumber}}</td></tr>
-           <tr><td>email:</td><td>{{formData.email}}</td></tr>
-           <tr> <td>city</td><td>:{{formData.city}}</td></tr>
-           <tr> <td>Address:</td><td>{{formData.address}}</td></tr>
-           <tr> <td>Area:</td><td>{{formData.area}} sq.ft</td></tr>
-           <tr><td>painting-Type:</td><td>{{formData.paintingtype}}</td></tr>
-           <tr><td>Date:</td><td>{{formData.date|date}}</td></tr>
-    </table><br>
-    <p>payment<a routerLink="/payment"><button class="text-center bg-info-subtle justify-content-center d-block mx-auto">checkout</button></a></p>
+<div id="content" class="container border border-dark mt-3">
+    <div class="heading row">
+            <h6 class="fs-2 text-center">Quotation</h6>
+    </div>
+    <div class="row">
+        <table class="table border border-dark p-2 w-50 mx-auto ">
+            <tbody>
+               <tr><td>name:</td><td>{{formData.name}}</td></tr>
+               <tr> <td>phonenumber:</td><td>{{formData.phonenumber}}</td></tr>
+               <tr><td>email:</td><td>{{formData.email}}</td></tr>
+               <tr> <td>city:</td><td>{{formData.city}}</td></tr>
+               <tr> <td>Address:</td><td>{{formData.address}}</td></tr>
+               <tr> <td>Area:</td><td>{{formData.area}} sq.ft</td></tr>
+               <tr><td>painting-Type:</td><td>{{formData.paintingtype}}</td></tr>
+               <tr><td>Date:</td><td>{{formData.date|date}}</td></tr>
+               <tr><td>Cost:</td><td>Rs.{{formData.cost}}</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="mt-2">
+                <p class="fw-bold">Terms and Conditions</p>
+                <ol class="">
+                    <li><p>Please pay within 15 days from the date of invoice,overdue intrest &commat;14% will be changed on delayed payments.</p></li>
+                    <li>Please quote invoice number when remitting funds.</li>
+                </ol>
+            </div>
+            <div class="mt-2">
+                <p class="fw-bold">Additional Notes</p>
+                <p >It is a long established fact that a Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus vero fuga, fugiat veritatis similique asperiores consequatur saepe ipsam molestiae ea corrupti quo. Cumque dicta hic cum modi impedit, ducimus rem?</p>
+            </div>
+            <div class="mt-2">
+                <p class="fw-bold">Attachments</p>
+                <ol>
+                    <li>file1</li>
+                    <li>file2</li>
+                    <li>file3</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="button p-2">
+    <a routerLink="/payment"><button class="text-center bg-info-subtle d-block mx-auto">checkout</button></a>    
+        <button (click)="generatePdf()" class="text-center bg-info-subtle d-block mx-auto">Download pdf</button> 
 </div>

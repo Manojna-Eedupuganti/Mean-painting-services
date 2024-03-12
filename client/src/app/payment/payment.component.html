@@ -1,71 +1,72 @@
-<div class="scroll-container">
-    <p>*Please complete the payment procedure*</p>
-</div>
+<div id="bg">
+    <div class="text-danger text-center text-danger fw-bold fst-italic fs-4">
+        <p>*Please complete the payment procedure*</p>
+    </div>
+    <div class="card mx-auto mt-3 mb-3 w-25" id="pic">
+        <form class="w-50 mx-auto mt-3" [formGroup]="payment" #ref="ngForm" (ngSubmit)="onSubmit()">
+            <div class="mb-1">
+                <label class="form-label">Card No:</label>
+                <input id="cardno" type="string" formControlName="cardno" class="form-control">
+                <div *ngIf="cardno?.invalid && (cardno?.dirty || cardno?.touched || ref.submitted)">
+                    <p *ngIf="cardno?.errors?.['required']" class="text-danger">cardno is required</p>
+                    <p *ngIf="cardno?.errors?.['pattern']" class="text-danger">Enter valid card num</p>
+                </div>
+            </div>
+            <div class="mb-1">
+                <label class="form-label">cvv:</label>
+                <input id="cvv" type="string" formControlName="cvv" class="form-control">
+                <div *ngIf="cvv?.invalid && (cvv?.dirty || cvv?.touched || ref.submitted)">
+                    <p *ngIf="cvv?.errors?.['required']" class="text-danger">cvv is required</p>
+                    <p *ngIf="cvv?.errors?.['pattern']" class="text-danger">cvv valid card num</p>
+                </div>
+            </div>
+            <div class="mb-1">
+                <label class="form-label">Cardholder Name:</label>
+                <input id="name" type="string" formControlName="name" class="form-control">
+                <div *ngIf="name?.invalid && (name?.dirty || name?.touched || ref.submitted)">
+                    <p *ngIf="name?.errors?.['required']" class="text-danger">Name is required</p>
+                </div>
+            </div>
+            <div class="mb-1">
+                <label class="form-label">Exp Date:</label>
+                <input id="expdate" type="string" formControlName="expdate" placeholder="mm/yy" class="form-control">
+                <div *ngIf="expdate?.invalid && (expdate?.dirty || expdate?.touched || ref.submitted)">
+                    <p *ngIf="expdate?.errors?.['required']" class="text-danger">Exp date is required</p>
+                </div>
+            </div>
+            <div class="mb-1">
+                <label class="form-label">Amount:</label>
+                <input id="amount" type="text"  class="form-control" [value]="totalCost" [(ngModel)]="totalCost">
+            </div>
+            <div>
+                <button class="btn btn-success d-block mx-auto">submit</button>
+            </div>
+        </form><br>
+    </div>
+    <br>
+    <div>
+        <h2 class="wp-block-heading nitro-offscreen"
+            id="different-types-of-paint-and-how-much-they-cost-per-sq.-ft.-in-india"><strong>Different Types of Paint
+                and How Much They Cost Per Sq. Ft. In India</strong></h2>
+        <p class="nitro-offscreen">Here are the various kinds of paints that are available in the market. Wall painting
+            colours price determines the whole budget of your renovations.</p>
+        <h3 class="wp-block-heading nitro-offscreen"><strong>Enamel Paint</strong></h3>
+        <p class="nitro-offscreen">Used in high-traffic areas because it lasts a long time, are very easy to clean and
+            come in a variety of glossy finishes. They're also waterproof and stainable, and they're widely used on
+            metal and wood. Enamel paint is a good choice if you're worried about the paint cost per litre. The cost of
+            emulsion paint is calculated per square foot and begins at Rs 80.</p>
+        <h3 class="wp-block-heading nitro-offscreen"><strong>Distemper</strong></h3>
+        <p class="nitro-offscreen">Low-priced water-based paint called distemper can cut the painting labour cost per
+            square foot in India. The practice of applying this paint is referred to as “whitewashing.” It's inexpensive
+            and simple to use, but it doesn't last very long. It is an annual supplementary labour charge for painting
+            because it is not washable and fades and flakes off when wet. The cost of distemper paint is Rs 10 per
+            square foot.</p>
+        <h3 class="wp-block-heading nitro-offscreen"><strong>Lustre Paints (oil or water-based)</strong></h3>
+        <p class="nitro-offscreen">These paints generate a pearl-like velvety surface. It's easy to keep shiny paints
+            clean. Many variables should be considered with the help of a house painting cost calculator (easily
+            available online). If you're moving into your home right away, you shouldn't use this paint because it takes
+            a long time to cure and has a strong odour. The price of lustre paint per square foot ranges between Rs 26
+            and Rs 30.</p>
 
-<div class="card mx-auto mt-3 mb-3 w-25" style="width: 20rem;">
-    <form class="w-50 mx-auto mt-3" [formGroup]="payment"  #ref="ngForm" (ngSubmit)="onSubmit()">
-        <div class="mb-3">
-        <label class="form-label">Card Number:</label>
-        <input id="cardno" type="string" formControlName="cardno" class="form-control">
-            <div *ngIf="cardno?.invalid && (cardno?.dirty || cardno?.touched || ref.submitted)">
-                <p *ngIf="cardno?.errors?.['required']" class="text-danger">card no is required</p>
-            </div>
-        </div>
-        <div class="mb-1"> 
-            <label class="form-label">cvv</label>
-            <input id="cvv" type="string" formControlName="cvv">
-            <div *ngIf="cvv?.invalid && (cvv?.dirty || cvv?.touched || ref.submitted)">
-                <p *ngIf="cvv?.errors?.['required']" class="text-danger">cvv is required</p>
-            </div>
-        </div>
-        <div class="mb-1">
-            <label class="form-label">Cardholder Name:</label>
-            <input id="name" type="string" formControlName="name">
-            <div *ngIf="name?.invalid && (name?.dirty || name?.touched || ref.submitted)">
-                <p *ngIf="name?.errors?.['required']" class="text-danger">Name is required</p>
-            </div>
-        </div>    
-        <div class="mb-1">
-            <label class="form-label">Exp Date:</label>
-            <input id="expdate" type="string" formControlName="expdate" placeholder="mm/yy">
-            <div *ngIf="expdate?.invalid && (expdate?.dirty || expdate?.touched || ref.submitted)">
-                <p *ngIf="expdate?.errors?.['required']" class="text-danger">Exp date is required</p>
-            </div>
-        </div>
-        <div class="mb-1">
-            <label class="form-label">Amount:</label>
-            <input id="amount" type="string" formControlName="amount"> 
-            <div *ngIf="amount?.invalid && (amount?.dirty || amount?.touched || ref.submitted)">
-                <p *ngIf="amount?.errors?.['required']" class="text-danger">Amount is required</p>
-            </div>
-        </div>
-        <div>
-            <button class="btn btn-success d-block mx-auto">submit</button>
-        </div>
-    </form><br>
+    </div>
 </div>
-<br>
-<div>
-    <h2 class="wp-block-heading nitro-offscreen" id="different-types-of-paint-and-how-much-they-cost-per-sq.-ft.-in-india"><strong>Different Types of Paint and How Much They Cost Per Sq. Ft. In India</strong></h2>
-    <p class="nitro-offscreen">Here are the various kinds of paints that are available in the market. Wall painting colours price determines the whole budget of your renovations.</p>
-    <h3 class="wp-block-heading nitro-offscreen"><strong>Enamel Paint</strong></h3>
-    <p class="nitro-offscreen">Used in high-traffic areas because it lasts a long time, are very easy to clean and come in a variety of glossy finishes. They're also waterproof and stainable, and they're widely used on metal and wood. Enamel paint is a good choice if you're worried about the paint cost per litre. The cost of emulsion paint is calculated per square foot and begins at Rs 80.</p>
-    <h3 class="wp-block-heading nitro-offscreen"><strong>Distemper</strong></h3>
-    <p class="nitro-offscreen">Low-priced water-based paint called distemper can cut the painting labour cost per square foot in India. The practice of applying this paint is referred to as “whitewashing.” It's inexpensive and simple to use, but it doesn't last very long. It is an annual supplementary labour charge for painting because it is not washable and fades and flakes off when wet. The cost of distemper paint is Rs 10 per square foot.</p>
-    <h3 class="wp-block-heading nitro-offscreen"><strong>&nbsp;Lustre Paints (oil or water-based)</strong></h3>
-    <p class="nitro-offscreen">These paints generate a pearl-like velvety surface. It's easy to keep shiny paints clean. Many variables should be considered with the help of a house painting cost calculator (easily available online). If you're moving into your home right away, you shouldn't use this paint because it takes a long time to cure and has a strong odour. The price of lustre paint per square foot ranges between Rs 26 and Rs 30.</p>
-    <figure class="wp-block-table nitro-offscreen">
-        <table>
-            <tbody>
-                <tr><td>Type of Paint</td><td>Cost to paint a 2 BHK flat (per sq. ft.)</td></tr>
-                <tr><td>Enamel Paint</td><td>Rs. 80</td></tr>
-                <tr><td>Distemper</td><td>Rs. 10</td></tr>
-                <tr><td>Lustre Paint</td><td>Rs. 26-30</td></tr>
-                <tr><td>Emulsion Paint</td><td>Rs. 12-60</td></tr>
-                <tr><td>Textured Paint</td><td>Rs. 80-200</td></tr>
-            </tbody>
-        </table>
-    </figure>
-
-</div>
-

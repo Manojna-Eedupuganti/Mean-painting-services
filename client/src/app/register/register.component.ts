@@ -3,7 +3,7 @@ import { Validators,FormControl,FormGroup} from '@angular/forms'
 import { UserService } from '../services/user.service';
 import { User } from '../model/users';
 import { Router } from '@angular/router';
- 
+import {NgToastService} from'ng-angular-popup';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -19,6 +19,7 @@ user=new FormGroup({
  
 userService=inject(UserService)
 router=inject(Router)
+toast=inject(NgToastService)
 duplicateUserStatus:boolean=false;
 
   get username() {
@@ -42,20 +43,26 @@ duplicateUserStatus:boolean=false;
 onSubmitUser(){
   let {username,password,email,dob}=this.user.value;
   let newUser=new User(username,password,email,dob);
-  this.userService.createUser(newUser).subscribe(
-    (res)=>{
+  this.userService.createUser(newUser).subscribe({
+    next:(res)=>{
       console.log(res)
       //navigate to login
       if(this.user.valid){
         this.router.navigate(['/login'])
       }
+      this.toast.success({
+        detail:'Register done',
+        summary:'User registration is successfully completed.',
+        position:'topCenter',
+        duration:3000
+        })
       
     },
-    (err)=>{
+    error:(err)=>{
       console.log("error in user creation")
     }
- 
-  )
+  
+})
 }
  
 }

@@ -1,6 +1,13 @@
-.scroll-container{
-    width:200px;
-    height: 100px;
-    overflow: auto;
-    color: orangered;
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+#pic{
+    background-image: url('https://img.freepik.com/free-psd/plastic-credit-card-mockup_1318-728.jpg?t=st=1709879089~exp=1709882689~hmac=f975b7ee679b6aa62ade12c26c870cf3bc6e4772b6bde76ef797f6f4b97700e1&w=900');
+    height: fit-content;
+     background-size: auto;
+}
+#bg{
+    background-color:cornsilk;
 }

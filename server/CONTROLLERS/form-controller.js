@@ -20,6 +20,7 @@ const updateformData=async(req,res)=>{
     let updatedForm=await FormData.findOne({name:req.body.name})
     console.log("updated form BEFORE",updatedForm)
     updatedForm.date=req.body.date
+    updatedForm.cost = req.body.cost
     console.log("updated form ",updatedForm)
     
     let updated=await FormData.findOneAndUpdate({name:req.body.name},updatedForm)

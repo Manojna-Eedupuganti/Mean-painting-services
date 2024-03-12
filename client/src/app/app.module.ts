@@ -16,7 +16,7 @@ import { FooterComponent } from './footer/footer.component';
 import { PaymentComponent } from './payment/payment.component';
 import { QuoteComponent } from './quote/quote.component';
 import { ThanksComponent } from './thanks/thanks.component';
-
+import {NgToastModule, NgToastService} from 'ng-angular-popup'
 
 @NgModule({
   declarations: [
@@ -39,7 +39,8 @@ import { ThanksComponent } from './thanks/thanks.component';
       BrowserModule,
       AppRoutingModule,
       ReactiveFormsModule,
-      FormsModule
+      FormsModule,
+      NgToastModule
     ],
     providers: [
       provideHttpClient(withFetch()),
